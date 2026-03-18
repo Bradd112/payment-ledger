@@ -7,7 +7,9 @@ RUN apt-get update \
         unzip \
         libpq-dev \
         libzip-dev \
-    && docker-php-ext-install pdo pdo_pgsql bcmath \
+        libsodium-dev \
+        libicu-dev \
+    && docker-php-ext-install pdo pdo_pgsql bcmath opcache sodium intl zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Composer
